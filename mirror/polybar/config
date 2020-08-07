@@ -26,7 +26,7 @@ foreground = #fff
 foreground-alt = #fff
 
 # Primary, secondary, etc colors
-primary = #ffb6c1
+primary = #6b93e8
 secondary = #e60053
 alert = #bd2c40
 

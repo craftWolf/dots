@@ -1,6 +1,9 @@
 /**
- * User: char
- * Copyright: Dave Davenport
+ * A rofi theme with the launcher on the side. This is my
+ * custom theme used on my system, and colors will be changed
+ * from time to time
+ *
+ * User: charlotte
  */
 * {
     text-color:  #ffeedd;
@@ -8,7 +11,7 @@
     dark: #1c1c1c;
 
 
-    highlight-bg: #ff79c6;
+    highlight-bg: #6b93e8;
     highlight-fg: #1c1c1c;
 }
 #window {
@@ -31,10 +34,7 @@
     //background-color: @lightblack;
     padding: 10px;
 }
-// #button selected {
-//     border-color: @lightgreen;
-//     text-color: @lightgreen;
-// }
+
 #entry {
     width: 20em;
 }
