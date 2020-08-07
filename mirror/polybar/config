@@ -26,13 +26,13 @@ foreground = #fff
 foreground-alt = #fff
 
 # Primary, secondary, etc colors
-primary = #ff92df
+primary = #ffb6c1
 secondary = #e60053
 alert = #bd2c40
 
 # Very unspecific colors, *definitely* not a certain color palette
 trans-blue = #58C8F2
-trans-pink = #EDA4B2
+trans-pink = #ffb6c1
 trans-white = #FFFFFF
 
 [section/base]
