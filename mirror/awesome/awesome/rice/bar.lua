@@ -36,6 +36,7 @@ volume = lain.widget.pulse {
         if volume_now.muted == "yes" then
             vlevel = " muted "
         end
+
         widget:set_markup(lain.util.markup("#ffffff", vlevel))
     end
 }

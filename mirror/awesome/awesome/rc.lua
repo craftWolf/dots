@@ -27,6 +27,9 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+-- Autostart
+local autostart = require("autostart")
+
 -- Helper function to set the wallpaper using beautiful
 local function set_wallpaper(s)
     -- Wallpaper
