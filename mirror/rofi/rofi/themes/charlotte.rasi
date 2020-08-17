@@ -1,0 +1,102 @@
+/**
+ * A rofi theme with the launcher on the side. This is my
+ * custom theme used on my system, and colors will be changed
+ * from time to time
+ *
+ * User: charlotte
+ */
+* {
+    text-color:  #ffeedd;
+    background-color: #1c1c1c;
+    dark: #1c1c1c;
+
+    highlight-bg: #ff70c8;
+    highlight-fg: #1c1c1c;
+}
+
+#window {
+    border: 2px;
+    border-color: @highlight-bg;
+    text-color: @text-color;
+}
+
+#sidebar {
+    border: 2px 0px 0px 0px;
+    //background-color: @lightblack;
+    padding: 10px;
+}
+
+#entry {
+    width: 20em;
+}
+
+#inputbar {
+    //background-color: @lightblack;
+    text-color: @lightgreen;
+    //padding: 0px;
+
+    // top right bottom left
+    margin: 5px 5px 0px 5px;
+}
+
+#mainbox {
+    expand: false;
+    background-color: #1c1c1cee;
+    spacing: 1em;
+}
+
+#listview {
+    padding: 0.5em;
+    dynamic: true;
+    scrollbar: true;
+
+    lines: 10;
+}
+
+#element selected  normal {
+    background-color: @highlight-bg;
+    text-color: @highlight-fg;
+}
+
+#element normal active {
+    text-color: @highlight-fg;
+}
+
+#element alternate normal {
+
+}
+
+#element alternate active {
+    text-color: @highlight-bg;
+}
+
+// #element alternate urgent {
+//     text-color: @lightred;
+// }
+#element selected active {
+    background-color: @highlight-bg;
+    text-color: @dark;
+}
+
+#element selected urgent {
+    background-color: @highlight-bg;
+    text-color: @dark;
+}
+
+#inputbar {
+    children: [ entry,case-indicator ];
+}
+
+#textbox-prompt-colon {
+    expand:     false;
+    str:        "";
+    margin:     0px 0em 0em 0em ;
+    text-color: @normal-foreground;
+}
+
+#scrollbar { 
+    border: 0;
+    width: 0;
+    handle-color: @scrollbarcolor;
+    handle-width: 0;
+}
