@@ -70,7 +70,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/home/char/.config/awesome/theme.lua")
+beautiful.init("/home/char/.config/awesome/rice/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "mate-terminal"
@@ -156,7 +156,7 @@ root.buttons(gears.table.join(
 -- }}}
 
 -- Keybindings
-require("rice.keys")
+require("keys")
 
 -- Mouse dragging and resizing
 clientbuttons = gears.table.join(
