@@ -16,11 +16,11 @@ local themes_path = gfs.get_themes_dir()
 local theme = {}
 
 theme.wallpaper = "/home/char/images/wallpapers/anime-girl-cyberpunk.jpg"
-theme.font          = "Cozette Medium 12"
-theme.taglist_font  = "Cozette Medium 12"
+theme.font          = "Iosevka Nerd Font 10"
+theme.taglist_font  = "Iosevka Nerd Font 12"
 
 theme.bg_normal     = "#121212"
-theme.bg_focus      = "#202020"
+theme.bg_focus      = "#121212"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
 theme.bg_systray    = theme.bg_normal

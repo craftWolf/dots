@@ -128,6 +128,17 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- {{{ Wibar
 local wibar = require("rice.bar")
 
+-- Friendly names for tags
+local main_tag = " "
+local www_tag  = " "
+local chat_tag = " ﭮ"
+local steam_tag = " "
+local music_tag = " "
+local code_tag =  " "
+local blank1_tag = "  "
+local blank2_tag = " "
+local blank3_tag = ""
+
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
@@ -135,7 +146,8 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    local names = { "main", "www", "chat", "games", "office", "6", "7", "8", "9" }
+    --             main www chat steam spotify code blank blank blank
+    local names = { main_tag, www_tag, chat_tag, steam_tag, music_tag, code_tag, blank1_tag, blank2_tag, blank3_tag }
     local l = awful.layout.suit
 
     -- Workspace 4 should be awful.layout.suit.max.fullscreen for games,
@@ -193,15 +205,12 @@ awful.rules.rules = {
     -- Floating clients.
     { rule_any = {
         instance = {
-          "DTA",  -- Firefox addon DownThemAll.
           "copyq",  -- Includes session name in class.
           "pinentry",
         },
         class = {
           "Arandr",
-          "Blueman-manager",
           "Gpick",
-          "Kruler",
           "MessageWin",  -- kalarm.
           "Sxiv",
           "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
@@ -226,9 +235,20 @@ awful.rules.rules = {
       }, properties = { titlebars_enabled = false }
     },
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+    { rule = { class = "Firefox" },
+      properties = { screen = 1, tag = www_tag } },
+
+    { rule = { class = "discord" },
+      properties = { screen = 1, tag = chat_tag } },
+
+    -- Set Steam to start on the first blank tag, and in floating mode
+    { rule = { class = "Steam" }, 
+      properties = { screen = 1, tag = blank1_tag, floating = true }},
+
+    -- Add specific rules for CS:GO to fix an issue where the game
+    -- was being cut off without running in tiled mode, and with no titlebars
+    { rule = { class = "csgo_linux64" },
+      properties = { screen = 1, tag = steam_tag, floating = false, titlebars_enabled = false}}
 }
 -- }}}
 

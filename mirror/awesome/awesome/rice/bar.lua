@@ -23,18 +23,18 @@ local clock = wibox.widget.textclock()
 -- CPU activity
 local cpu = lain.widget.cpu {
     settings = function()
-        usage = " " .. cpu_now.usage .. " "
+        usage = "  " .. cpu_now.usage .. "% "
         widget:set_markup(lain.util.markup("#ffffff", usage))
     end
 }
 
 -- Volume widget
 volume = lain.widget.pulse {
-    timeout  = 5,
+    timeout  = 1,
     settings = function()
-        vlevel = "  " .. volume_now.left .. " "
+        vlevel = " 墳 " .. volume_now.left .. " "
         if volume_now.muted == "yes" then
-            vlevel = " muted "
+            vlevel = "婢 muted "
         end
 
         widget:set_markup(lain.util.markup("#ffffff", vlevel))
@@ -77,14 +77,14 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
-    s.wibox = awful.wibar({ position = "top", screen = s })
+    s.wibox = awful.wibar({ position = "bottom", screen = s })
 
     -- Add widgets to the wibox
     s.wibox:setup {
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            mylauncher,
+            --mylauncher,
             s.taglist,
             s.promptbox,
         },

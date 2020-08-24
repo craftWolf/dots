@@ -41,19 +41,20 @@ globalkeys = gears.table.join(
     awful.key({}, "XF86AudioNext", function() awful.spawn("playerctl next") end),
     awful.key({}, "XF86AudioPrev", function() awful.spawn("playerctl previous") end),
 
+    -- Need to change the sink sometimes since it could be incorrect :/
     awful.key({}, "XF86AudioRaiseVolume",   
         function() 
-            awful.spawn("pactl set-sink-volume 1 +5%") 
+            awful.spawn("pactl set-sink-volume 3 +5%") 
             volume.update()
         end),
     awful.key({}, "XF86AudioLowerVolume",
         function() 
-            awful.spawn("pactl set-sink-volume 1 -5%") 
+            awful.spawn("pactl set-sink-volume 3 -5%") 
             volume.update()
         end),
     awful.key({}, "XF86AudioMute",
         function() 
-            awful.spawn("pactl set-sink-mute 1 toggle")
+            awful.spawn("pactl set-sink-mute 3 toggle")
             volume.update()
         end),
 
